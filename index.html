@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d2b">
+<title>For Priyanka — Meri Laxmiiii 🪔</title>
+<style>
+:root{--gold:#f8d99a;--pink:#ffd2e5;--lav:#d9c8ff;--ink:#100d2b;--cream:#fff7ee}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--cream);background:radial-gradient(ellipse at 18% 85%,#633e77 0,transparent 38%),radial-gradient(ellipse at 85% 15%,#37336e 0,transparent 36%),linear-gradient(145deg,#090c25,#171337 55%,#321b49)}
+button{font:inherit}
+#sky,#decor{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.moon{position:absolute;right:8%;top:5%;font-size:clamp(42px,7vw,76px);filter:drop-shadow(0 0 18px #ffe6ad)}
+.star{position:absolute;color:#fff4c9;opacity:.55;animation:twinkle 2.6s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:1;transform:scale(1.5)}}
+.shooting{position:absolute;width:110px;height:2px;background:linear-gradient(90deg,#fff8d5,transparent);transform:rotate(-35deg);animation:shoot 5.8s linear infinite;opacity:0}
+@keyframes shoot{0%,72%{opacity:0;transform:translate(0,0) rotate(-35deg)}74%{opacity:1}88%{opacity:0;transform:translate(-220px,140px) rotate(-35deg)}100%{opacity:0}}
+.glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.15}
+.glow.a{width:260px;height:260px;background:#ff9fc9;left:-110px;bottom:4%}
+.glow.b{width:220px;height:220px;background:#a99aff;right:-100px;bottom:0}
+.floaty{position:absolute;bottom:-50px;animation:floatUp linear infinite;opacity:.55}
+@keyframes floatUp{to{transform:translateY(-115vh) translateX(35px) rotate(25deg);opacity:0}}
+#topbar{position:fixed;z-index:10;top:12px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px;pointer-events:none}
+#counter,#musicStatus{font:11px/1.2 Arial,sans-serif;letter-spacing:2px;color:#ffe8c7c9;text-shadow:0 1px 8px #000}
+#musicBtn{pointer-events:auto;border:1px solid #f8d99a66;background:#ffffff12;color:#fff1d4;border-radius:22px;padding:9px 13px;font:12px Arial,sans-serif;backdrop-filter:blur(10px)}
+#app{height:100%;width:100%;display:grid;place-items:center;padding:48px 14px 54px}
+.page{display:none;position:relative;width:min(820px,100%);max-height:calc(100dvh - 112px);overflow:auto;scrollbar-width:thin;scrollbar-color:#eacb9b55 transparent;padding:clamp(22px,4.8vw,48px);text-align:center;border:1px solid #f6d58b88;border-radius:28px;background:linear-gradient(145deg,#201a49ee,#392044eF);box-shadow:0 24px 80px #03031399,inset 0 0 55px #ffd6ed0c;backdrop-filter:blur(15px)}
+.page:before{content:"";position:absolute;inset:7px;border:1px solid #ffe8c433;border-radius:21px;pointer-events:none}
+.page.active{display:block;animation:reveal .62s cubic-bezier(.2,.8,.2,1) both}
+@keyframes reveal{from{opacity:0;transform:translateX(32px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.kicker{font:10px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+h1{font-size:clamp(39px,8vw,72px);line-height:1.04;font-weight:normal;color:var(--pink);margin:12px 0;text-shadow:0 0 24px #ffb5d877}
+h2{font-size:clamp(27px,5vw,42px);line-height:1.15;font-weight:normal;color:var(--pink);margin:10px 0 20px;text-shadow:0 0 18px #ffb5d844}
+p{font-size:clamp(15px,2vw,18px);line-height:1.82;text-align:left;color:#fff2e9;margin:13px 0}
+.hero-copy{text-align:center}
+.ornament{font-size:clamp(35px,6vw,54px);margin:12px 0;filter:drop-shadow(0 0 12px #ffda9b66)}
+.rule{color:var(--gold);letter-spacing:8px;margin:22px 0 8px}
+.date{display:inline-block;border:1px solid #f6d58b88;color:var(--gold);border-radius:30px;padding:8px 15px;font:12px Arial,sans-serif;letter-spacing:1px;margin:0 0 12px}
+.quote{font-size:clamp(18px,3vw,24px);color:var(--pink);text-align:center;font-style:italic}
+.actions{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:25px;flex-wrap:wrap}
+.action{border:1px solid #ffe4ac99;border-radius:28px;padding:12px 22px;color:#281534;background:linear-gradient(135deg,#ffe6ad,#f4b5d0);font: bold 13px Arial,sans-serif;cursor:pointer;box-shadow:0 7px 24px #f5a8c533;transition:transform .2s,filter .2s}
+.action:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.action.secondary{background:#ffffff12;color:#ffe9c8;box-shadow:none}
+#progressWrap{position:fixed;z-index:10;bottom:13px;left:50%;transform:translateX(-50%);width:min(360px,75vw);text-align:center}
+#progressLine{height:3px;border-radius:4px;background:#ffffff2c;overflow:hidden;margin-bottom:9px}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,#eeb7d5,#f8d99a);transition:width .4s}
+#dots{display:flex;justify-content:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:8px;background:#ffffff55;transition:.3s}
+.dot.on{width:19px;background:var(--gold)}
+#toast{position:fixed;z-index:20;left:50%;bottom:55px;transform:translate(-50%,12px);opacity:0;transition:.3s;background:#21183ded;border:1px solid #f8d99a88;color:#fff0d7;border-radius:18px;padding:10px 15px;font:12px Arial,sans-serif;max-width:90vw;text-align:center;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.final-glow{animation:finalPulse 2.2s ease-in-out infinite alternate}
+@keyframes finalPulse{to{text-shadow:0 0 28px #ffd66e,0 0 55px #ff9fca}}
+@media(max-width:560px){
+ #app{padding:43px 10px 58px}
+ .page{max-height:calc(100dvh - 102px);padding:25px 20px;border-radius:23px}
+ .page:before{inset:5px;border-radius:18px}
+ p{line-height:1.68;font-size:15px}
+ .moon{right:4%;top:5%;opacity:.65}
+ .actions{margin-top:18px}
+ .action{padding:11px 18px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="sky"><div class="moon">🌙</div><div class="glow a"></div><div class="glow b"></div></div>
+<div id="decor" aria-hidden="true"></div>
+<div id="topbar"><div id="counter">01 / 11</div><div id="musicStatus">♫ TUM TAK</div><button id="musicBtn" onclick="toggleMusic()">♫ Music: Off</button></div>
+<main id="app">
+<section class="page active">
+ <div class="kicker">a little light, made just for you</div><div class="ornament">🪷 🪔 ✨</div>
+ <h1>Happy Diwali,<br>Meri Laxmiiii!</h1>
+ <p class="hero-copy">Meri pyaari Priyanka, iss roshni bhari raat mein tumhare liye ek chhota sa surprise… 11 pages, dher saari wishes aur har page par tumhare liye ek pyaari si baat. Bas aaram se kholna, madam ji. ❤️</p>
+ <p class="hero-copy">Happy Diwali meri pyaari Priyanka, meri Laxmiiii! 🥹❤️ Aaj ki iss khoobsurat raat par meri taraf se tumhe dher saari khushiyan, pyaar aur blessings. Jaise ghar ke har kone mein diye roshni bhar dete hain, waise hi tumhari life ka har din hasi, sukoon aur achhe moments se bhara rahe. Tumhare chehre ki woh pyaari si smile hamesha bani rahe, tumhare dil ki har achhi wish poori ho aur tumhe kabhi apni worth par doubt na ho. Aaj mithai thodi extra khana, photos mast lena aur celebration ko dil se enjoy karna. Aur haan, meri taraf se ek virtual diya tumhare naam ka bhi jala dena. 🪔✨</p>
+ <div class="rule">✧ 🪔 ✧ 🪷 ✧</div>
+ <div class="actions"><button class="action" onclick="begin()">Open Your Surprise ❤️</button></div>
+ <p class="hero-copy" style="font-size:12px;color:#e9cbd7">Button dabate hi Tum Tak play karne ki koshish karega 🎵</p>
+</section>
+
+<section class="page">
+ <div class="kicker">02 · ek pyaari si presence</div><div class="ornament">🎀🧸</div>
+ <h2>Meri Chhoti Si Laxmi</h2>
+ <p>Pata hai Priyanka, kuch logon ki presence hi apne aap mein ek achhi feeling hoti hai. Tumhari baaton mein, tumhare nature mein aur tumhare chhote-chhote gestures mein ek alag si sweetness hai. Tum ho toh normal si conversation bhi thodi interesting ban jaati hai. Kabhi tumhari koi simple si baat yaad aa jaati hai aur bina reason ke smile aa jaati hai. Main bas yahi chahta hoon ki tum apni life mein hamesha pyaar aur respect feel karo. Apni cuteness ko kabhi change mat karna, aur apne dreams ko bhi kabhi chhota mat samajhna. Meri Laxmi, tum apne aap mein bahut special ho. 🥹🌷</p>
+ <div class="rule">♡ ♡ ♡</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">03 · tumhari baaton ka magic</div><div class="ornament">🦋💬</div>
+ <h2>Tumhari Cute-Cute Baatein</h2>
+ <p>Tumhari cute-cute baatein aur woh apna special andaaz… honestly, kabhi-kabhi toh samajh hi nahi aata ki tum itni sweet kaise ho. 😂❤️ Kabhi ekdum seedhi-saadhi baat, kabhi funny reply, kabhi cute se nakhre aur kabhi aisa expression jaise duniya ka sabse bada issue ho gaya ho! Madam ji, tumhare ye little moments hi toh conversation ko memorable bana dete hain. Tumhari har baat perfect ho zaroori nahi; tumhara real aur natural hona hi sabse achha lagta hai. Bas aise hi apni mast personality ke saath rehna. Aur haan, apne nakhre ka thoda quota mere liye bhi save rakhna. 😂🫶🏻</p>
+ <div class="rule">✧ 🌸 ✧</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">04 · waqt mein sambhali ek yaad</div><div class="ornament">🥹💌</div>
+ <h2>31 October: Hamari Yaadgaar Shaam</h2>
+ <span class="date">31 OCTOBER · 4:26 PM</span>
+ <p>31 October, shaam ke 4:26 baje… ❤️ Woh moment mere liye sach mein bahut special ban gaya, kyunki us din pehli baar maine tumhe video call par dekha. Screen par tumhara chehra, tumhari smile, tumhari awaaz aur baat karte waqt tumhare expressions — sab kuch ek alag hi yaad ban gaya. 🥹✨ Kabhi-kabhi kuch moments bahut simple hote hain, lekin dil mein apni jagah bana lete hain. Shayad tumhare liye woh ek normal si video call rahi ho, par mere liye us shaam ki apni hi importance hai. Tumhari smile dekhkar jo khushi hui, use words mein poori tarah explain karna mushkil hai. Isliye iss website mein is memory ke liye ek special page rakha hai, taaki 31 October aur 4:26 PM hamesha ek pyaari si yaad bankar rahe. 💗</p>
+ <div class="rule">🌙 ✨ 🌙</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">05 · mischief department</div><div class="ornament">😝🎀</div>
+ <h2>Meri Pagli Madam Ki Sharartein</h2>
+ <p>Ab baat karte hain meri pagli madam ki shararton ki! 😂 Tumhare nakhre kabhi-kabhi itne cute hote hain ki un par gussa hona bhi mushkil ho jaata hai. Kabhi tumhari teasing, kabhi funny baatein, kabhi woh chhoti si zid aur kabhi aise reactions jaise maine pata nahi kya kar diya ho. Madam ji, tumhari iss shararti personality ka apna hi charm hai. Bas ek request hai: apni masti kabhi band mat karna, kyunki tumhari hasi aur ye silly moments hi toh din ko halka-phulka bana dete hain. Lekin haan, jab tum mujhe tease karo toh thoda discount bhi diya karo. Main har baar itna innocent bhi nahi hoon! 😭😂❤️</p>
+ <div class="rule">✦ 😂 ✦</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">06 · tumhari roshni</div><div class="ornament">🌷✨</div>
+ <h2>Tumhari Smile Aur Pyaara Nature</h2>
+ <p>Tumhari smile mein ek bahut pyaari si warmth hai, Priyanka. Aur tumhara nature — jis tarah tum apni baaton se saamne wale ko comfortable feel kara sakti ho — woh bhi bahut achha hai. ❤️ Kisi insaan ki khoobsurati sirf uske looks se nahi, balki uski kindness, uski soch aur uske behaviour se bhi hoti hai. Tum apni achhaiyon ko pehchanna, apni value samajhna aur kabhi kisi ke words ki wajah se apne aap ko kam mat samajhna. Tumhari smile tumhari hai, use apni khushi ke liye sambhal kar rakhna. Duniya mein jitni roshni diye se hoti hai, utni hi roshni ek kind heart bhi phaila sakta hai. 🪔🦋</p>
+ <div class="rule">♡ ✧ ♡</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">07 · dil se kahi hui baat</div><div class="ornament">💗🫶🏻</div>
+ <h2>Tum Mere Liye Kitni Special Ho</h2>
+ <p>Priyanka, tum mere liye ek special dost ho, aur tumhari presence ki apni ek importance hai. Har din koi extraordinary baat ho, aisa zaroori nahi; kabhi ek chhoti si conversation, ek funny reply ya bas haal-chaal pooch lena bhi din ko achha bana deta hai. Tumhare saath share ki hui chhoti-chhoti baatein apni jagah rakhti hain. Main chahta hoon ki hamari friendship hamesha respect, trust, honesty aur hasi-mazaak se bhari rahe. Agar kabhi main words mein achhe se express na kar paun, toh itna samajh lena ki tumhari khushi aur well-being mere liye matter karti hai. Thank you, apni original si personality ke saath rehne ke liye. 🥹❤️</p>
+ <div class="rule">✧ 💌 ✧</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">08 · ek gentle reminder</div><div class="ornament">🌧️➡️🌈</div>
+ <h2>Jab Kabhi Udaas Ho Toh Ye Padhna</h2>
+ <p>Meri Laxmiiii, agar kabhi koi din achha na jaaye, mann udaas ho ya cheezein tumhari marzi ke hisaab se na ho rahi hon, toh khud par pressure mat banana. Har din perfect hona zaroori nahi hota. Thoda rest lena, paani peena, apne kisi trusted insaan se baat karna aur khud ko woh kindness dena jo tum doosron ko deti ho. Difficult days hamesha ek jaise nahi rehte; dheere-dheere cheezein better ho sakti hain. Tum capable ho, tumhari feelings important hain aur tumhe help maangne ka bhi poora haq hai. Apne aap ko time dena, apni pace par aage badhna aur yaad rakhna — tumhari value kisi ek din, result ya kisi aur ki opinion se decide nahi hoti. 🫶🏻🌸</p>
+ <div class="rule">☁️ ✨ 🌈</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">09 · tumhare kal ke naam</div><div class="ornament">🌠📖</div>
+ <h2>Tumhare Saare Sapne Poore Hon</h2>
+ <p>Meri pyaari Priyanka, meri dil se wish hai ki tumhare saare achhe sapne ek-ek karke poore hon. Tumhe apni mehnat ka beautiful result mile, naye opportunities milen aur tum jis direction mein jaana chahti ho wahan confidence ke saath badh sako. Kabhi setbacks aayein toh unhe apni journey ka end mat samajhna; kabhi-kabhi raasta badalna bhi progress hota hai. Tum apni achievements celebrate karna, chhoti ho ya badi. Tumhare aas-paas supportive log hon, tumhare decisions mein clarity ho aur tumhare dil mein apne future ko lekar excitement bani rahe. May your coming years be full of growth, peace, laughter and wonderful surprises. ✨🌷</p>
+ <div class="rule">✦ 🌟 ✦</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Next Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">10 · kanha ji ke charnon mein</div><div class="ornament">🦚🙏🏻🌼</div>
+ <h2>Kanha Ji Se Meri Pyaari Si Dua</h2>
+ <p>Hey Kanha Ji, aaj Diwali ke iss shubh mauke par meri ek pyaari si prayer hai. Priyanka ko hamesha sehat, sukoon aur khushiyan dena. Uske parivaar par apni kripa banaye rakhna; ghar mein pyaar, ekta aur samriddhi bani rahe. Uske dil ki achhi wishes poori karna, uski mehnat ko safalta dena aur mushkil waqt mein use himmat aur sahi raasta dikhana. Uski smile ki wajahen badhti rahein aur uski zindagi mein achhe log aur khoobsurat mauke aate rahein. Use itni inner strength dena ki woh har challenge ka saamna apne confidence ke saath kar sake. Kanha Ji, meri iss pyaari dost ko apna aashirwad dena. Radhe Radhe. 🙏🏻💛🪷</p>
+ <div class="rule">🙏🏻 🪔 🙏🏻</div><div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="next()">Final Surprise →</button></div>
+</section>
+
+<section class="page">
+ <div class="kicker">11 · aakhri surprise, sirf tumhare naam</div><div class="ornament final-glow">💖🪔🌸✨</div>
+ <h2 class="final-glow">Sirf Tumhare Naam, Meri Laxmiiii</h2>
+ <p>Meri pyaari Priyanka, iss website ka aakhri page aa gaya, lekin tumhare liye meri good wishes kabhi khatam nahi hongi. ❤️ Maine ye chhota sa Diwali surprise isliye banaya, taaki tum jab ise kholo toh tumhe lage ki kisi ne tumhare liye waqt nikala, har page ko socha aur tumhari smile ke liye kuch special banane ki koshish ki. Ho sakta hai words har feeling ko perfectly explain na kar paayein, par har line ke peeche ek sincere wish hai — tum khush raho, healthy raho, apne dreams ke liye proud feel karo aur life ke har naye chapter ko excitement ke saath welcome karo. Apne ghar walon ke saath khoob saari yaadein banana, mithai share karna, diye jalana aur aaj ki raat ko beautiful banana. Agar kabhi ye pages dobara padho, toh yaad rakhna ki tumhari friendship aur tumhari khushi ki value hai. Thank you for being you, meri cute si Laxmiiii. 🥹🫶🏻</p>
+ <p class="quote">Tumhari har raat roshan ho, har subah umeed laaye,<br>har dua mein khushi ho, har sapna sach ho jaaye. ✨</p>
+ <p class="quote">Once again, Happy Diwali, Meri Laxmiiii! ❤️🪔<br>Radhe Radhe! 🌸</p>
+ <div class="rule">✧ 🪷 ✧ 🪔 ✧</div>
+ <div class="actions"><button class="action secondary" onclick="prev()">← Back</button><button class="action" onclick="celebrate()">Celebrate! 🎆</button><button class="action secondary" onclick="restart()">Read Again ↺</button></div>
+ <div id="celebrationNote" class="quote" style="display:none;margin-top:18px">A sky full of lights, and a heart full of wishes — all for you! 💗✨</div>
+</section>
+</main>
+<div id="progressWrap"><div id="progressLine"><div id="progressFill"></div></div><div id="dots"></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<audio id="bgMusic" loop preload="none"><source src="Tum Tak.mp3" type="audio/mpeg"></audio>
+<script>
+const pages=[...document.querySelectorAll('.page')],dotsBox=document.getElementById('dots');
+const counter=document.getElementById('counter'),fill=document.getElementById('progressFill');
+const music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn'),musicStatus=document.getElementById('musicStatus');
+let current=0,muted=false,toastTimer;
+pages.forEach((_,i)=>{const d=document.createElement('span');d.className='dot';d.title=`Page ${i+1}`;dotsBox.appendChild(d)});
+const dots=[...dotsBox.children];
+function notify(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800)}
+function show(n){
+ pages[current].classList.remove('active');current=Math.max(0,Math.min(pages.length-1,n));
+ void pages[current].offsetWidth;pages[current].classList.add('active');pages[current].scrollTop=0;
+ dots.forEach((d,i)=>d.classList.toggle('on',i===current));
+ counter.textContent=`${String(current+1).padStart(2,'0')} / 11`;
+ fill.style.width=((current+1)/11*100)+'%';
+}
+async function begin(){
+ show(1);
+ try{await music.play();musicStatus.textContent='♫ TUM TAK · PLAYING';musicBtn.textContent='♫ Music: On'}
+ catch(e){musicStatus.textContent='♫ TUM TAK';notify('Music start nahi hua? Music button par dobara tap karke try karo.')}
+}
+function next(){if(current<pages.length-1)show(current+1)}
+function prev(){if(current>0)show(current-1)}
+function restart(){show(0);document.getElementById('celebrationNote').style.display='none'}
+async function toggleMusic(){
+ if(music.paused){try{await music.play();musicBtn.textContent='♫ Music: On';musicStatus.textContent='♫ TUM TAK · PLAYING';notify('Tum Tak is playing 🎵')}catch(e){notify('Audio play nahi ho paaya. MP3 file ko index.html ke saath rakho.')}} 
+ else{music.pause();musicBtn.textContent='♫ Music: Off';musicStatus.textContent='♫ TUM TAK · PAUSED'}
+}
+function celebrate(){
+ const note=document.getElementById('celebrationNote');note.style.display='block';
+ for(let i=0;i<34;i++){const el=document.createElement('span');el.className='floaty';el.textContent=['✨','💖','🌸','🪔','🎆'][Math.floor(Math.random()*5)];el.style.left=Math.random()*100+'%';el.style.fontSize=(14+Math.random()*20)+'px';el.style.animationDuration=(3+Math.random()*3)+'s';document.getElementById('decor').appendChild(el);setTimeout(()=>el.remove(),6500)}
+}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev()});
+const sky=document.getElementById('sky');
+for(let i=0;i<85;i++){const s=document.createElement('span');s.className='star';s.textContent=Math.random()>.5?'✦':'·';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(6+Math.random()*12)+'px';s.style.animationDelay=Math.random()*4+'s';sky.appendChild(s)}
+for(let i=0;i<3;i++){const sh=document.createElement('span');sh.className='shooting';sh.style.top=(10+Math.random()*55)+'%';sh.style.left=(45+Math.random()*45)+'%';sh.style.animationDelay=(i*2.1)+'s';sky.appendChild(sh)}
+for(let i=0;i<14;i++){const f=document.createElement('span');f.className='floaty';f.textContent=['♡','✿','🦋','✨'][i%4];f.style.left=Math.random()*100+'%';f.style.fontSize=(12+Math.random()*14)+'px';f.style.animationDuration=(12+Math.random()*14)+'s';f.style.animationDelay=(-Math.random()*18)+'s';document.getElementById('decor').appendChild(f)}
+show(0);
+</script>
+</body>
+</html>
